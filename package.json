@@ -4,7 +4,9 @@
   "description": "scaffolding",
   "main": "app.js",
   "dependencies": {
-    "koa": "^1.2.0"
+    "config": "^1.20.4",
+    "koa": "^1.2.0",
+    "koa-router": "^5.4.0"
   },
   "devDependencies": {},
   "scripts": {
