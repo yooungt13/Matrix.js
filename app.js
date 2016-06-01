@@ -1,7 +1,15 @@
 'use strict';
 
-let app = require('koa')();
-let config = require('config');
+const app = require('koa')();
+const views = require('koa-views');
+const config = require('config');
+
+// 注册模板
+app.use(views(__dirname + '/view', {
+    map: {
+        html: 'swig'
+    }
+}));
 
 // 注册路由
 require('./enviroment/context/router')(app);

@@ -1,0 +1,13 @@
+{% extends "../layout/default.html" %}
+
+{% block content %}
+<h1>{{ title|title }}</h1>
+<p>You have some roles to pick:</p>
+<ul>
+{% for role in roles %}
+    <li{% if loop.first %} class="first"{% endif %}>
+        {{ role }}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

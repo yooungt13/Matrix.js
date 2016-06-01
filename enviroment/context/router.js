@@ -13,7 +13,6 @@ const ROOT_PATH = process.cwd() + '/controller';
 module.exports = function(app) {
     wakler(ROOT_PATH).forEach((route) => {
         router.register(route.path, route.method, route.middleware);
-        // logger.info(route.path)
     });
 
     router.get("/", function*() {
