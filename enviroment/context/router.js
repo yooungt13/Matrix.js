@@ -16,7 +16,10 @@ module.exports = function(app) {
     });
 
     router.get("/", function*() {
-        this.body = 'Welcome to werewolf';
+        yield this.render('page/index', {
+            title: 'Hello, Werewolf.',
+            roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker']
+        })
     });
 
     app.use(router.routes())
@@ -33,23 +36,12 @@ let wakler = (root) => {
 
         if (!stat.isDirectory()) {
             let route = require(path);
-            const BASE_PATH = path.replace(ROOT_PATH, '').split('.')[0];
-            let paths = [];
-            if (route.path && _.isString(route.path)) {
-                paths.push(route.path);
-            } else if (route.path && _.isArray(route.path)) {
-                paths = route.path;
-            } else {
-                paths.push(path.replace(ROOT_PATH, '').split('.')[0]);
-            }
 
             // 得到文件内容
-            paths.forEach((path) => {
-                res.push({
-                    path: path,
-                    method: route.method || ['GET'],
-                    middleware: route.middleware || function*() {}
-                });
+            res.push({
+                path: route.path || path.replace(ROOT_PATH, '').split('.')[0],
+                method: route.method || ['GET'],
+                middleware: route.middleware || function*() {}
             });
 
         } else {
