@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node app.js &; gulp"
+    "dev": "pm2 startOrGracefulReload ./pm2.dev.json; gulp",
+    "prod": "pm2 startOrGracefulReload ./pm2.json"
   },
   "repository": {
     "type": "git",

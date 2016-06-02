@@ -6,12 +6,14 @@ const livereload = require('gulp-refresh');
 
 let paths = {
     less: ['public/less/**/*.less'],
-    refresh: ['public/less/**/*.less', 'public/es5/**/*.js', 'controller/**/*.js', 'view/**/*.html']
+    refresh: ['public/less/**/*.less', 'public/js/**/*.js', 'view/**/*.html']
 }
 
 gulp.task('watch', () => {
-    gulp.watch(path.less, compile);
-    gulp.watch(path.refresh, refresh);
+    gulp.watch(paths.less, compile);
+    gulp.watch(paths.refresh, refresh);
+
+    livereload.listen();
 });
 
 gulp.task('default', ['watch']);

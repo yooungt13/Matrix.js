@@ -1,0 +1,21 @@
+{
+  "apps" : [{
+    "name"               : "werewolf",
+    "script"             : "app.js",
+    "env": {
+      "COMMON_VARIABLE": "true",
+      "NODE_ENV": "prod"
+    },
+    "exec_interpreter"   : "node",
+    "node_args"          : "--harmony",
+    "exec_mode"          : "cluster_mode",
+    "instances"          : 0,
+    "log_date_format"    : "YYYY-MM-DD HH:mm Z",
+    "max_memory_restart" : "700M",
+    "merge_logs"         : true,
+    "error_file"         : "./log/error.log",
+    "out_file"           : "./log/out.log",
+    "watch"              : ["controller"],
+    "instances"          : 1
+  }]
+}

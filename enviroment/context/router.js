@@ -10,20 +10,26 @@ let fs = require('fs');
 
 const ROOT_PATH = process.cwd() + '/controller';
 
-module.exports = function(app) {
+module.exports = (app) => {
+
+    // 遍历文件，得到所有controller
     wakler(ROOT_PATH).forEach((route) => {
+        // 将所有controller注册路由
         router.register(route.path, route.method, route.middleware);
     });
 
-    router.get("/", function*() {
-        yield this.render('page/index', {
-            title: 'Hello, Werewolf.',
-            roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker']
-        })
-    });
-
     app.use(router.routes())
-       .use(router.allowedMethods());
+        .use(router.allowedMethods());
+
+    return function*(next) {
+
+        // TODO:
+        // if(debug) { }
+        // 如果是debug model, 则每次request重置请求controller路由
+        // 改动生效，刷新页面
+
+        yield next;
+    }
 };
 
 let wakler = (root) => {
@@ -39,6 +45,7 @@ let wakler = (root) => {
 
             // 得到文件内容
             res.push({
+                // 得到controller设置path或者路径
                 path: route.path || path.replace(ROOT_PATH, '').split('.')[0],
                 method: route.method || ['GET'],
                 middleware: route.middleware || function*() {}
