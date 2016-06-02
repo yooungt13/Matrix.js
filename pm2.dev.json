@@ -8,14 +8,14 @@
     },
     "exec_interpreter"   : "node",
     "node_args"          : "--harmony",
-    "exec_mode"          : "cluster_mode",
+    "exec_mode"          : "cluster",
     "instances"          : 0,
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "700M",
     "merge_logs"         : true,
     "error_file"         : "./log/error.log",
     "out_file"           : "./log/out.log",
-    "watch"              : ["controller"],
+    "watch"              : ["controller", "enviroment"],
     "instances"          : 1
   }]
 }

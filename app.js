@@ -1,39 +1,46 @@
 'use strict';
 
 const app = require('koa')();
-const views = require('koa-views');
 const config = require('config');
 
-const router = require('./enviroment/context/router');
+const MID_PATH = config.get('path.middleware');
 
-// 注册模板
-app.use(views(__dirname + '/view', {
-    map: {
-        html: 'swig'
-    }
-}));
+const template = require(MID_PATH + '/template');
+const error = require(MID_PATH + '/error');
+const router = require(MID_PATH + '/router');
+
+// 注册模板引擎
+app.use(template);
+// 处理异常
+app.use(error);
+// 配置路由
+app.use(router(app));
 
 // app.use(generator());
 
-// 注册路由
-app.use(router(app));
+// 全部加载
+// ['template', 'error', 'router'].forEach((file) => {
+//     let mid = require(MID_PATH + '/' + file);
+//     app.use(isGen(mid) ? mid : mid.call(this, app));
+// });
 
 app.listen(3000);
 
-// 打印config信息
-// console.log(config.get('Customer.dbConfig'));
+// function generator() {
+//     let isReady = false;
 
-function generator() {
-    let isReady = false;
+//     return function*(next) {
+//         if (isReady) {
+//             console.log('Generator is ready.');
+//             return yield next;
+//         }
 
-    return function*(next) {
-        if(isReady) {
-            console.log('Generator is ready.');
-            return yield next;
-        }
+//         isReady = true;
+//         console.log('Generator init.');
+//         yield next;
+//     }
+// }
 
-        isReady = true;
-        console.log('Generator init.');
-        yield next;
-    }
-}
+// function isGen(fn) {
+//     return 'function' === typeof fn && fn.constructor.name === 'GeneratorFunction';
+// }

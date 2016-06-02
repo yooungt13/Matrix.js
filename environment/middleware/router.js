@@ -5,8 +5,8 @@
 
 'use strict';
 
-let router = require("koa-router")();
-let fs = require('fs');
+const router = require("koa-router")();
+const fs = require('fs');
 
 const ROOT_PATH = process.cwd() + '/controller';
 
