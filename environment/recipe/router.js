@@ -6,11 +6,13 @@
 'use strict';
 
 const router = require("koa-router")();
+const config = require("config");
 const fs = require('fs');
 
-const ROOT_PATH = process.cwd() + '/controller';
+const ROOT_PATH = config.get('path.controller');
 
 module.exports = (app) => {
+    const DEBUG = app.debug;
 
     // 遍历文件，得到所有controller
     wakler(ROOT_PATH).forEach((route) => {
@@ -21,15 +23,7 @@ module.exports = (app) => {
     app.use(router.routes())
         .use(router.allowedMethods());
 
-    return function*(next) {
-
-        // TODO:
-        // if(debug) { }
-        // 如果是debug model, 则每次request重置请求controller路由
-        // 改动生效，刷新页面
-
-        yield next;
-    }
+    DEBUG('ROUTERS are all registed.');
 };
 
 let wakler = (root) => {

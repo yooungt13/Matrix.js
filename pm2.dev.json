@@ -4,7 +4,9 @@
     "script"             : "app.js",
     "env": {
       "COMMON_VARIABLE": "true",
-      "NODE_ENV": "prod"
+      "NODE_ENV": "prod",
+      "DEBUG": "Werewolf",
+      "DEBUG_FD": 1
     },
     "exec_interpreter"   : "node",
     "node_args"          : "--harmony",
