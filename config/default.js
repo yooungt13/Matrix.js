@@ -1,16 +1,20 @@
 const path = require('path');
 
 module.exports = {
+    // application name
     name: 'Werewolf',
+    // server starup file
+    launcher: __dirname + '/../environment/launcher',
+
     host: {
-        document: ''
+        document: 'localhost:3000'
     },
     path: {
         base: __dirname + '/../',
 
         // model config
         datasource: __dirname + '/../model/datasource',
-        mock: '/..//model/mock',
+        mock: __dirname + '/../model/mock',
         // view config
         view: __dirname + '/../view',
         // controller config

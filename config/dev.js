@@ -1,8 +1,6 @@
 module.exports = {
     host: {
-        document: ''
+        document: 'localhost:3000'
     },
-    path: {
-        base: __dirname + '/../'
-    }
+    mock: true
 }

@@ -4,7 +4,7 @@
     "script"             : "app.js",
     "env": {
       "COMMON_VARIABLE": "true",
-      "NODE_ENV": "prod",
+      "NODE_ENV": "dev",
       "DEBUG": "Werewolf",
       "DEBUG_FD": 1
     },
@@ -17,7 +17,7 @@
     "merge_logs"         : true,
     "error_file"         : "./log/error.log",
     "out_file"           : "./log/out.log",
-    "watch"              : ["controller", "enviroment"],
+    "watch"              : ["controller", "environment"],
     "instances"          : 1
   }]
 }
