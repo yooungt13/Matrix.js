@@ -6,7 +6,7 @@
 'use strict';
 
 const config = require('config');
-const startup = require(config.launcher);
+const app = require(config.application);
 
 // 启动server
-startup().listen(config.port);
+app.listen(config.port || 3000);

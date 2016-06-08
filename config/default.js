@@ -4,7 +4,7 @@ module.exports = {
     // application name
     name: 'Werewolf',
     // server starup file
-    launcher: __dirname + '/../environment/launcher',
+    application: __dirname + '/../environment/application',
 
     host: {
         document: 'localhost:3000'
