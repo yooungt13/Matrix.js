@@ -6,7 +6,6 @@
 'use strict';
 
 const views = require('koa-views');
-const config = require('config');
 
 module.exports = (app) => {
 

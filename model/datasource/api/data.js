@@ -6,20 +6,19 @@
 'use strict';
 
 const config = require('config');
+const request = require('koa-request');
 
 module.exports = function*(next) {
-    console.log(this.request.url);
 
-    const useMock = config.mock;
-    const pathname = this.request.url;
+    // TODO
+    // fecth data
+    var options = {
+        url: 'https://api.github.com/repos/dionoid/koa-request',
+        headers: { 'User-Agent': 'request' }
+    };
 
-    if (!!useMock) {
-        const MOCK_PATH = config.path.mock;
-        this.datasource = require(MOCK_PATH + pathname);
-    } else {
-        const DATA_PATH = config.path.datasource;
-        this.datasource = yield require(DATA_PATH + pathname);
-    }
+    var response = yield request(options);
+    var data = JSON.parse(response.body)
 
-    yield next;
+    return data;
 }

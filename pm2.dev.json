@@ -11,13 +11,12 @@
     "exec_interpreter"   : "node",
     "node_args"          : "--harmony",
     "exec_mode"          : "cluster",
-    "instances"          : 0,
+    "instances"          : 1,
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "700M",
     "merge_logs"         : true,
     "error_file"         : "./log/error.log",
     "out_file"           : "./log/out.log",
-    "watch"              : ["controller", "environment"],
-    "instances"          : 1
+    "watch"              : ["controller", "environment"]
   }]
 }

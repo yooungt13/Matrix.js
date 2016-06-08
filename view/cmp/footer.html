@@ -2,6 +2,18 @@
     <p>Copyright @有田十三</p>
 </footer>
 
+<script type="text/javascript" src="/public/js/lib/sea.js"></script>
 <script>
-    console.log('Welcome to Werewolf.');
+    // seajs 的简单配置
+    seajs.config({
+        base: './public/js',
+        alias: {
+            "zepto": "lib/zepto.js"
+        }
+    });
+</script>
+<script>
+    seajs.use('page/main', (page) => {
+        page.init();
+    });
 </script>

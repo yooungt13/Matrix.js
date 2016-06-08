@@ -14,11 +14,11 @@ module.exports = function*(next) {
     const pathname = this.request.url;
 
     const DATA_PATH = (!!useMock ? config.path.mock : config.path.datasource) + pathname;
+    // const DATA_PATH = config.path.datasource + pathname;
 
     // 数据格式接受json|js
     if (fs.existsSync(DATA_PATH + '.json') || fs.existsSync(DATA_PATH + '.js')) {
         let datasource = require(DATA_PATH);
-
         // datasource返回接受generator|function|object
         if(isGenerator(datasource)) {
             this.datasource = yield datasource;

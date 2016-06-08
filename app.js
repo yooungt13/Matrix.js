@@ -10,4 +10,3 @@ const startup = require(config.launcher);
 
 // 启动server
 startup().listen(config.port);
-

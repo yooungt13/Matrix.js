@@ -34,7 +34,12 @@ function injectRecipes(app) {
     const DEBUG = app.debug;
 
     // 按顺序加载recipe
-    ['template', 'middleware', 'router'].forEach((file) => {
+    [
+        'static',          // 静态资源文件
+        'template',        // 模板引擎
+        'middleware',      // 中间件
+        'router'           // 路由
+    ].forEach((file) => {
         require(RECIPE_PATH + '/' + file).call(this, app);
     });
 

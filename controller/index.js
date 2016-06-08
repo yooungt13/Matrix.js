@@ -16,9 +16,12 @@ module.exports = {
         // URL参数取参
         // console.log(this.request.query);
 
+        // console.log(this.datasource);
+        // yield this.render('page/index', this.datasource);
+
         yield this.render('page/index', {
             title: 'Hello, Werewolf.',
             roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker']
-        })
+        });
     }
 }
