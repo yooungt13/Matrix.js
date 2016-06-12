@@ -1,16 +1,17 @@
 'use strict';
 
 const gulp = require('gulp');
-const less = require('gulp-less');
+const path = require('path');
+const sass = require('gulp-sass');
 const livereload = require('gulp-refresh');
 
 let paths = {
-    less: ['public/less/**/*.less'],
-    refresh: ['public/less/**/*.less', 'public/js/**/*.js', 'view/**/*.html']
+    sass: ['public/scss/**/*.scss'],
+    refresh: ['public/scss/**/*.scss', 'public/js/**/*.js', 'view/**/*.html']
 }
 
 gulp.task('watch', () => {
-    gulp.watch(paths.less, compile);
+    gulp.watch(paths.sass, compile);
     gulp.watch(paths.refresh, refresh);
 
     livereload.listen();
@@ -18,16 +19,10 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['watch']);
 
-// 编译less
+// 编译sass
 function compile() {
-    gulp.src(paths.less)
-        .pipe(less({
-            paths: [path.join(__dirname, '/public/less/')]
-        }))
-        .on('error', function(err) {
-            console.error(err.message);
-            this.end();
-        })
+    gulp.src(paths.sass)
+        .pipe(sass())
         .pipe(gulp.dest('./public/css'));
 }
 

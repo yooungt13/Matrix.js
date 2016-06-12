@@ -5,7 +5,7 @@
 
 'use strict';
 
-const views = require('koa-views');
+const render = require('koa-swig');
 
 module.exports = (app) => {
 
@@ -13,11 +13,12 @@ module.exports = (app) => {
     const DEBUG = app.debug;
 
     // 配置template engine
-    app.use(views(VIEW_PATH, {
-        map: {
-            html: 'swig'
+    app.context.render = render({
+        root: VIEW_PATH,
+        locals: {
+            env: process.env.NODE_ENV || 'dev'
         }
-    }));
+    });
 
     DEBUG('TEMPLATE is set.');
 };

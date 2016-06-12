@@ -21,6 +21,7 @@ module.exports = {
 
         yield this.render('page/index', {
             title: 'Hello, Werewolf.',
+            css: 'page.css',
             roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker']
         });
     }

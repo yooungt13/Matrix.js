@@ -2,12 +2,6 @@
   "apps" : [{
     "name"               : "werewolf",
     "script"             : "app.js",
-    "env": {
-      "COMMON_VARIABLE": "true",
-      "NODE_ENV": "dev",
-      "DEBUG": "Werewolf",
-      "DEBUG_FD": 1
-    },
 
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "700M",
@@ -15,6 +9,14 @@
     "error_file"         : "./log/error.log",
     "out_file"           : "./log/out.log",
 
-    "watch"              : ["controller", "environment"]
+    // watch file changed & reload
+    "watch"              : ["controller", "environment"],
+
+    // environment variables
+    "env": {
+      "NODE_ENV": "dev",
+      "DEBUG"   : "Werewolf",
+      "DEBUG_FD": 1
+    }
   }]
 }
