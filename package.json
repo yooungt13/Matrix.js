@@ -2,7 +2,7 @@
   "name": "werewolf",
   "version": "1.0.0",
   "description": "scaffolding",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "config": "^1.20.4",
     "debug": "^2.2.0",

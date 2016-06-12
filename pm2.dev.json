@@ -1,7 +1,7 @@
 {
   "apps" : [{
     "name"               : "werewolf",
-    "script"             : "app.js",
+    "script"             : "index.js",
 
     "log_date_format"    : "YYYY-MM-DD HH:mm Z",
     "max_memory_restart" : "700M",

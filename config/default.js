@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
     // application name
     name: 'Werewolf',
-    // server starup file
-    application: __dirname + '/../environment/application',
+    // application server starup file
+    app: __dirname + '/../environment/app',
 
     host: {
         document: 'localhost:3000'
