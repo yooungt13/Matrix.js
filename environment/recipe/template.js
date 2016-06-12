@@ -6,6 +6,7 @@
 'use strict';
 
 const render = require('koa-swig');
+const extension = require('../helper/render');
 
 module.exports = (app) => {
 
@@ -15,8 +16,10 @@ module.exports = (app) => {
     // 配置template engine
     app.context.render = render({
         root: VIEW_PATH,
+        filters: extension,
         locals: {
-            env: process.env.NODE_ENV || 'dev'
+            env: process.env.NODE_ENV || 'dev',
+            STATIC_HOST: app.config.host.static
         }
     });
 

@@ -7,17 +7,10 @@
 <meta name="format-detection" content="email=no" />
 <meta name="format-detection" content="address=no" />
 
-{# 配置动态参数 #}
-{% if env == 'dev' %}
-{% set STATIC_HOST = '/public' %}
+{% if css && css|typeof == 'string' %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_HOST}}/css/{{css}}"/>
 {% else %}
-{% set STATIC_HOST = 'http://static.hello13.net' %}
-{% endif %}
-
-{% if css && css|last != 's' %}
 {% for style in css %}
 <link rel="stylesheet" type="text/css" href="{{STATIC_HOST}}/css/{{style}}"/>
 {% endfor %}
-{% else %}
-<link rel="stylesheet" type="text/css" href="{{STATIC_HOST}}/css/{{css}}"/>
 {% endif %}
