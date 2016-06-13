@@ -16,13 +16,21 @@ module.exports = {
         // URL参数取参
         // console.log(this.request.query);
 
-        // console.log(this.datasource);
-        // yield this.render('page/index', this.datasource);
+        /**
+         * 获取接口数据
+         * 若NODE_ENV: dev下, 取mock数据
+         * 若NODE_ENV: st/prod, 取datasource api接口数据
+         * console.log(this.datasource);
+         * yield this.render('page/index', this.datasource);
+         */
 
         yield this.render('page/index', {
             title: 'Hello, Werewolf.',
             css: ['page.css'],
-            roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker']
+            roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker'],
+
+            // 日期：中国时区误差8小时
+            now: new Date()
         });
     }
 }

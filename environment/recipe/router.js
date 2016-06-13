@@ -10,6 +10,7 @@ const config = require("config");
 const fs = require('fs');
 
 const ROOT_PATH = config.get('path.controller');
+const ROUTE_MAP = {};
 
 module.exports = (app) => {
     const DEBUG = app.debug;
@@ -19,6 +20,8 @@ module.exports = (app) => {
         // 将所有controller注册路由
         router.register(route.path, route.method, route.middleware);
     });
+
+    app.context.routerMap = ROUTE_MAP;
 
     app.use(router.routes())
         .use(router.allowedMethods());
@@ -36,14 +39,18 @@ let wakler = (root) => {
 
         if (!stat.isDirectory()) {
             let route = require(path);
+            let filePath = path.replace(ROOT_PATH, '').split('.')[0];
 
             // 得到文件内容
             res.push({
                 // 得到controller设置path或者路径
-                path: route.path || path.replace(ROOT_PATH, '').split('.')[0],
+                path: route.path || filePath,
                 method: route.method || ['GET'],
                 middleware: route.middleware || function*() {}
             });
+
+            // 生成routermap
+            ROUTE_MAP[route.path || filePath] = filePath;
 
         } else {
             res = res.concat(wakler(path));

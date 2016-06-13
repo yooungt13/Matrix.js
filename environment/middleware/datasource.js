@@ -10,11 +10,11 @@ const config = require('config');
 
 module.exports = function*(next) {
 
-    const useMock = config.mock;
-    const pathname = this.request.url;
+    let useMock = config.mock;
+    let pathname = this.request.url;
+    let filename = this.routerMap[pathname];
 
-    const DATA_PATH = (!!useMock ? config.path.mock : config.path.datasource) + pathname;
-    // const DATA_PATH = config.path.datasource + pathname;
+    const DATA_PATH = (!!useMock ? config.path.mock : config.path.datasource) + filename;
 
     // 数据格式接受json|js
     if (fs.existsSync(DATA_PATH + '.json') || fs.existsSync(DATA_PATH + '.js')) {
