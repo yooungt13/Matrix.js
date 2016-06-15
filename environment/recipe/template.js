@@ -22,7 +22,8 @@ module.exports = (app) => {
     // 配置template engine
     app.context.render = render({
         root: VIEW_PATH,
-        filters: filters,
+        filters: filters,   // 扩展filter
+        cache: false,       // 禁止模板缓存
         locals: {
             GLOBAL: GLOBAL
         }
