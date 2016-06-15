@@ -18,15 +18,18 @@ module.exports = function*(next) {
 
     // 数据格式接受json|js
     if (fs.existsSync(DATA_PATH + '.json') || fs.existsSync(DATA_PATH + '.js')) {
-        let datasource = require(DATA_PATH);
-        // datasource返回接受generator|function|object
-        if(isGenerator(datasource)) {
-            this.datasource = yield datasource;
-        } else if(isFunction(datasource)) {
-            this.datasource = datasource.call(this);
-        } else {
-            this.datasource = datasource;
-        }
+        let data = require(DATA_PATH);
+
+        this.datasource = function*(params) {
+            // datasource返回接受generator|function|object
+            if (isGenerator(data)) {
+                return yield data(params);
+            } else if (isFunction(data)) {
+                return data.call(this);
+            } else {
+                return data;
+            }
+        };
     }
 
     yield next;

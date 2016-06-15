@@ -20,8 +20,8 @@ module.exports = {
          * 获取接口数据
          * 若NODE_ENV: dev下, 取mock数据
          * 若NODE_ENV: st/prod, 取datasource api接口数据
-         * console.log(this.datasource);
-         * yield this.render('page/index', this.datasource);
+         * let result = yield this.datasource(params));
+         * yield this.render('page/index', result);
          */
 
         yield this.render('page/index', {

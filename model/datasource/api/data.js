@@ -7,14 +7,16 @@
 
 const request = require('koa-request');
 
-module.exports = function*(next) {
+module.exports = function*(params) {
 
     // TODO
     // fecth data
     var options = {
         url: 'https://api.github.com/repos/dionoid/koa-request',
         // method: 'post',
-        headers: { 'User-Agent': 'request' }
+        headers: {
+            'User-Agent': 'request'
+        }
     };
 
     var response = yield request(options);
