@@ -5,7 +5,6 @@
 
 'use strict';
 
-const config = require('config');
 const request = require('koa-request');
 
 module.exports = function*(next) {
@@ -14,11 +13,12 @@ module.exports = function*(next) {
     // fecth data
     var options = {
         url: 'https://api.github.com/repos/dionoid/koa-request',
+        // method: 'post',
         headers: { 'User-Agent': 'request' }
     };
 
     var response = yield request(options);
-    var data = JSON.parse(response.body)
+    var data = JSON.parse(response.body);
 
     return data;
 }
