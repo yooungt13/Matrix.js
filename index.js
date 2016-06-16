@@ -5,6 +5,9 @@
 
 'use strict';
 
+// 默认为开发环境
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
+
 const config = require('config');
 const app = require(config.app);
 

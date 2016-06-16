@@ -24,6 +24,9 @@ module.exports = {
          * yield this.render('page/index', result);
          */
 
+        // console.log(this.ua);
+        // console.log(this.device);
+
         yield this.render('page/index', {
             title: 'Hello, Werewolf.',
             css: ['page.css'],
