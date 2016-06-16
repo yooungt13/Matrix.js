@@ -10,7 +10,10 @@
     "log",
     "model",
     "public",
-    "view"
+    "view",
+    "index.js",
+    "gulpfile.js",
+    "test.js"
   ],
   "main": "index.js",
   "dependencies": {
@@ -24,12 +27,14 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-refresh": "^1.1.0",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "mocha": "^2.5.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --reporter spec",
     "dev": "pm2 startOrGracefulReload ./pm2.dev.json; gulp",
     "prod": "pm2 startOrGracefulReload ./pm2.json"
   },
@@ -38,7 +43,11 @@
     "url": "git+https://github.com/yooungt13/Werewolf.git"
   },
   "keywords": [
-    "scaffolding",
+    "framework",
+    "koa",
+    "scaffold",
+    "webapp",
+    "front-end",
     "yeoman-generator"
   ],
   "author": "youngtian13",

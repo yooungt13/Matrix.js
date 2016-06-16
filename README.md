@@ -1,19 +1,18 @@
+#Usage
+
 Start to code:
 
 > npm run dev
-
-OR
-
-> node app.js & gulp
-
 
 If you want to check logs, then run:
 
 > pm2 logs
 
+or the directory /log.
 
 
-#file structure
+
+#File Structure
 
     ├── bin
     │   ├── build.sh      deployment: build shell

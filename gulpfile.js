@@ -1,3 +1,8 @@
+/**
+ * @author youngtian13
+ * @date 2016-06-15
+ */
+
 'use strict';
 
 const gulp = require('gulp');
