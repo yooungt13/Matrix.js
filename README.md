@@ -44,13 +44,16 @@ or the directory /log.
     │   ├── datasource    NODE_ENV: st/prod datasource
     │   └── mock          NODE_ENV: dev     mock datasource
     │
-    ├── public
-    │   ├── js
-    │   │   ├── page
-    │   │   └── lib
-    │   ├── css
-    │   │   └── index.css
-    │   └── scss
+    ├── resource
+    │   ├── src
+    │   │   ├── js
+    │   │   └── scss
+    │   └── build
+    │       ├── js
+    │       │   ├── page
+    │       │   └── lib
+    │       └── css
+    │           └── index.css
     │
     ├── views
     │   ├── cmp

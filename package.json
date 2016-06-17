@@ -1,6 +1,6 @@
 {
   "name": "generator-werewolf",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Scaffolding based on koa",
   "files": [
     "bin",
@@ -9,7 +9,7 @@
     "environment",
     "log",
     "model",
-    "public",
+    "resource",
     "view",
     "index.js",
     "gulpfile.js",
