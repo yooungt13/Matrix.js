@@ -2,18 +2,4 @@
     <p>Copyright @有田十三</p>
 </footer>
 
-<script type="text/javascript" src="{{GLOBAL.STATIC_HOST}}/js/lib/sea.js"></script>
-<script>
-    // seajs的简单配置
-    seajs.config({
-        base: './public/js',
-        alias: {
-            "zepto": "lib/zepto.js"
-        }
-    });
-</script>
-<script>
-    seajs.use('page/main', (page) => {
-        page.init();
-    });
-</script>
+<script type="text/javascript" src="{{GLOBAL.STATIC_HOST}}/js/page/main.js"></script>

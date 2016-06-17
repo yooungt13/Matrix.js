@@ -26,7 +26,7 @@ module.exports = {
         middleware: __dirname + '/../environment/middleware',
         extension: __dirname + '/../environment/extension',
 
-        public: __dirname + '/../public',
+        resource: __dirname + '/../resource',
         favicon: __dirname + '/../favicon.ico',
         hash: __dirname + '/../public/hash.json'
     },

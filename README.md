@@ -31,7 +31,7 @@ or the directory /log.
     │   ├── middelware
     │   ├── recipe        framework startup flow
     │   │   ├── template.js
-    │   │   ├── static.js
+    │   │   ├── resource.js
     │   │   ├── router.js
     │   │   └── middleware.js
     │   └── app.js        application script

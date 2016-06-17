@@ -26,7 +26,7 @@ class Application extends Koa {
 
         // 按顺序加载recipe
         [
-            'static', // 静态资源文件
+            'resource', // 静态资源文件
             'template', // 模板引擎
             'middleware', // 中间件
             'router' // 路由

@@ -9,12 +9,14 @@ const serve = require('koa-static-server');
 
 module.exports = (app) => {
 
-    const STATIC_PATH = app.config.path.public;
+    const RESOURCE_PATH = app.config.path.resource + '/build';
     const DEBUG = app.debug;
+
+    console.log(RESOURCE_PATH);
 
     // 设置静态文件路径
     app.use(serve({
-        rootDir: STATIC_PATH,
+        rootDir: RESOURCE_PATH,
         rootPath: '/public'
     }));
 
