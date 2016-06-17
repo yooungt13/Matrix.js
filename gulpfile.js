@@ -10,6 +10,9 @@ const path = require('path');
 const sass = require('gulp-sass');
 const livereload = require('gulp-refresh');
 const browserify = require('gulp-browserify');
+const uglify = require('gulp-uglify');
+const minify = require('gulp-minify-css');
+
 
 let paths = {
     sass: ['resource/src/scss/**/*.scss'],
@@ -27,12 +30,11 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['watch']);
 
-gulp.task('scripts', scripts);
-
 // 编译sass
 function compileCss() {
     gulp.src(paths.sass)
         .pipe(sass())
+        .pipe(minify())
         .pipe(gulp.dest('./resource/build/css'));
 }
 
@@ -44,6 +46,14 @@ function refresh(event) {
 // 执行browserify
 function compileJs() {
     gulp.src(paths.entry)
-        .pipe(browserify())
+        .pipe(browserify({
+            shim: {
+                zepto: {
+                    path: './resource/src/js/lib/zepto.js',
+                    exports: 'zepto'
+                }
+            }
+        }))
+        .pipe(uglify())
         .pipe(gulp.dest('resource/build/js/page'));
 }
