@@ -46,14 +46,7 @@ function refresh(event) {
 // 执行browserify
 function compileJs() {
     gulp.src(paths.entry)
-        .pipe(browserify({
-            shim: {
-                zepto: {
-                    path: './resource/src/js/lib/zepto.js',
-                    exports: 'zepto'
-                }
-            }
-        }))
+        .pipe(browserify())
         .pipe(uglify())
         .pipe(gulp.dest('resource/build/js/page'));
 }

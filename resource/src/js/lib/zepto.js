@@ -1584,4 +1584,8 @@ window.$ === undefined && (window.$ = Zepto)
       }
     }
   }
-})(Zepto)
+})(Zepto);
+
+module.exports = Zepto;
+
+
