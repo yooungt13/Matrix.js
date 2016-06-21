@@ -34,7 +34,7 @@ gulp.task('default', ['watch']);
 function compileCss() {
     gulp.src(paths.sass)
         .pipe(sass())
-        .pipe(minify())
+        // .pipe(minify())
         .pipe(gulp.dest('./resource/build/css'));
 }
 
@@ -47,6 +47,6 @@ function refresh(event) {
 function compileJs() {
     gulp.src(paths.entry)
         .pipe(browserify())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('resource/build/js/page'));
 }

@@ -41,6 +41,7 @@
     "test": "mocha --reporter spec",
     "dev": "pm2 startOrGracefulReload ./pm2.dev.json; gulp",
     "prod": "pm2 startOrGracefulReload ./pm2.json",
+    "start": "./node_modules/.bin/pm2 startOrGracefulReload ./pm2.json",
     "publish": "npm publish ./ --tag beta"
   },
   "repository": {
