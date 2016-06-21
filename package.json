@@ -1,6 +1,6 @@
 {
   "name": "generator-werewolf",
-  "version": "1.1.5",
+  "version": "1.1.9",
   "description": "Scaffolding based on koa",
   "files": [
     "bin",
@@ -41,8 +41,7 @@
     "test": "mocha --reporter spec",
     "dev": "pm2 startOrGracefulReload ./pm2.dev.json; gulp",
     "prod": "pm2 startOrGracefulReload ./pm2.json",
-    "start": "./node_modules/.bin/pm2 startOrGracefulReload ./pm2.json",
-    "publish": "npm publish ./ --tag beta"
+    "start": "./node_modules/.bin/pm2 startOrGracefulReload ./pm2.json"
   },
   "repository": {
     "type": "git",
