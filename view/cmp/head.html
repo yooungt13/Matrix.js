@@ -8,9 +8,9 @@
 <meta name="format-detection" content="address=no" />
 
 {% if css && css|typeof == 'string' %}
-<link rel="stylesheet" type="text/css" href="{{GLOBAL.STATIC_HOST}}/css/{{css}}"/>
+<link rel="stylesheet" type="text/css" href="{{GLOBAL.STATIC_HOST}}/css/{{css}}{{GLOBAL.VERSION}}"/>
 {% else %}
 {% for style in css %}
-<link rel="stylesheet" type="text/css" href="{{GLOBAL.STATIC_HOST}}/css/{{style}}"/>
+<link rel="stylesheet" type="text/css" href="{{GLOBAL.STATIC_HOST}}/css/{{style}}{{GLOBAL.VERSION}}"/>
 {% endfor %}
 {% endif %}

@@ -1,1 +1,17 @@
-!function r(e,n,o){function t(u,f){if(!n[u]){if(!e[u]){var c="function"==typeof require&&require;if(!f&&c)return c(u,!0);if(i)return i(u,!0);throw new Error("Cannot find module '"+u+"'")}var l=n[u]={exports:{}};e[u][0].call(l.exports,function(r){var n=e[u][1][r];return t(n?n:r)},l,l.exports,r,e,n,o)}return n[u].exports}for(var i="function"==typeof require&&require,u=0;u<o.length;u++)t(o[u]);return t}({1:[function(r,e,n){var o=r("./module");o.init()},{"./module":2}],2:[function(r,e,n){function o(){console.log("here's browserify.")}e.exports={init:o}},{}]},{},[1]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var page = require('./module');
+
+page.init();
+},{"./module":2}],2:[function(require,module,exports){
+// 通过 require 引入依赖
+// var $ = require('../lib/zepto');
+
+function init() {
+    console.log('here\'s browserify.');
+}
+
+// 或者通过 module.exports 提供整个接口
+module.exports = {
+    init: init
+}
+},{}]},{},[1])

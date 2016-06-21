@@ -19,6 +19,11 @@ module.exports = (app) => {
         STATIC_HOST: app.config.host.static
     }
 
+    // bs文件定位版本号
+    if(app.config.path.hash) {
+        GLOBAL.VERSION = '@' + require(app.config.path.hash).hash;
+    }
+
     // 配置template engine
     app.context.render = render({
         root: VIEW_PATH,

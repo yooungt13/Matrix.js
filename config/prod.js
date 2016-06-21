@@ -4,6 +4,6 @@ module.exports = {
         static: 'http://static.hello13.net/public'
     },
     path: {
-        base: __dirname + '/../'
+        hash: __dirname + '/../resource/hash.json',
     }
 }

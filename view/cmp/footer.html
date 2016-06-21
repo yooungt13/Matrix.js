@@ -2,4 +2,9 @@
     <p>Copyright @有田十三</p>
 </footer>
 
-<script src="{{GLOBAL.STATIC_HOST}}/js/page/main.js"></script>
+<script src="{{GLOBAL.STATIC_HOST}}/js/page/main.js{{GLOBAL.VERSION}}"></script>
+
+<!-- GLOBAL variables from recipe/template.js-->
+<p>NODE_ENV: {{GLOBAL.ENV}}</p>
+<p>STATIC_HOST: {{GLOBAL.STATIC_HOST}}</p>
+<p>GIT_COMMIT: {{GLOBAL.VERSION}}</p>
