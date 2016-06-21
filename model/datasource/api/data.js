@@ -12,7 +12,7 @@ module.exports = function*(params) {
     // TODO
     // fecth data
     var options = {
-        url: 'https://api.github.com/repos/dionoid/koa-request',
+        url: 'http://static.hello13.net/json/poi.json',
         // method: 'post',
         headers: {
             'User-Agent': 'request'

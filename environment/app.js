@@ -31,7 +31,7 @@ class Application extends Koa {
             'middleware', // 中间件
             'router' // 路由
         ].forEach((file) => {
-            require(RECIPE_PATH + '/' + file).call(this, this);
+            require(RECIPE_PATH + '/' + file).call(null, this);
         });
 
         DEBUG('RECIPE inject completely.');

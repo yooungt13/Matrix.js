@@ -5,28 +5,36 @@
 
 'use strict';
 
-const assert = require('chai').assert;
 const fs = require('fs');
+const co = require('co');
+
+const assert = require('chai').assert;
+const expect = require('chai').expect;
 
 const DATASOURCE_PATH = __dirname + '/model/datasource';
 const MOCK_PATH = __dirname + '/model/mock';
 const CONTROLLER_PATH = __dirname + '/controller';
 
-describe('Model', function() {
-    // describe('#datesource', function() {
-    //     it('should return json', function() {
-    //         // 遍历文件，得到所有datasource 文件
-    //         util.wakler(DATASOURCE_PATH, (path) => {
-    //             var gen = require(path)();
-    //             console.log(gen.next());
-    //             console.log(gen.next());
-    //             assert.equal('object', {});
-    //         });
-    //     });
-    // });
+describe('Model', () => {
+    describe('#datesource', () => {
+        it('should return json', (done) => {
+            // 遍历文件，得到所有datasource 文件
+            util.wakler(DATASOURCE_PATH, (path) => {
+                let ds = require(path);
+                if (util.isGenerator(ds)) {
+                    co(ds.bind(this)).then((data) => {
+                        // 检查返回data
+                        if (typeof data === 'object') {
+                            done();
+                        }
+                    });
+                }
+            });
+        });
+    });
 
-    describe('#mock', function() {
-        it('should return json', function() {
+    describe('#mock', () => {
+        it('should return json', () => {
             // 遍历文件，得到所有mock文件
             util.wakler(MOCK_PATH, (path) => {
                 assert.equal('object', typeof require(path));
@@ -35,9 +43,9 @@ describe('Model', function() {
     });
 });
 
-describe('Controller', function() {
-    describe('#router', function() {
-        it('should return statusCode = 200', function() {
+describe('Controller', () => {
+    describe('#router', () => {
+        it('should return statusCode = 200', () => {
             // TODO
             // assert.equal('200', router.statusCode);
         });
@@ -63,5 +71,8 @@ let util = {
                 util.wakler(path, cb);
             }
         });
+    },
+    isGenerator: (fn) => {
+        return 'function' === typeof fn && fn.constructor.name === 'GeneratorFunction';
     }
 }
