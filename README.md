@@ -19,7 +19,7 @@ or the directory /log.
     │   └── run.sh        deployment: run shell
     │
     ├── config
-    │   ├── defalut.js    defalut config
+    │   ├── defalut.js    default config
     │   ├── dev.js        NODE_ENV: dev config
     │   └── prod.js       NODE_ENV: prod config
     │

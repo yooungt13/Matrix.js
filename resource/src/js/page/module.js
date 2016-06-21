@@ -3,7 +3,6 @@
 
 function init() {
     console.log('here\'s browserify.');
-    console.log(typeof $);
 }
 
 // 或者通过 module.exports 提供整个接口

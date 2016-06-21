@@ -10,12 +10,13 @@ const fs = require('fs');
 
 const DATASOURCE_PATH = __dirname + '/model/datasource';
 const MOCK_PATH = __dirname + '/model/mock';
+const CONTROLLER_PATH = __dirname + '/controller';
 
 describe('Model', function() {
     // describe('#datesource', function() {
     //     it('should return json', function() {
     //         // 遍历文件，得到所有datasource 文件
-    //         util.wakler(DATASOURCE_PATH).forEach((path) => {
+    //         util.wakler(DATASOURCE_PATH, (path) => {
     //             var gen = require(path)();
     //             console.log(gen.next());
     //             console.log(gen.next());
@@ -27,7 +28,7 @@ describe('Model', function() {
     describe('#mock', function() {
         it('should return json', function() {
             // 遍历文件，得到所有mock文件
-            util.wakler(MOCK_PATH).forEach((path) => {
+            util.wakler(MOCK_PATH, (path) => {
                 assert.equal('object', typeof require(path));
             });
         });
@@ -44,9 +45,8 @@ describe('Controller', function() {
 });
 
 let util = {
-    wakler: (root) => {
-        let res = [],
-            files = fs.readdirSync(root);
+    wakler: (root, cb) => {
+        let files = fs.readdirSync(root);
 
         files.forEach((file) => {
             let path = root + '/' + file,
@@ -58,11 +58,10 @@ let util = {
             }
 
             if (!stat.isDirectory()) {
-                res.push(path);
+                cb && cb(path);
             } else {
-                res = res.concat(util.wakler(path));
+                util.wakler(path, cb);
             }
         });
-        return res;
     }
 }

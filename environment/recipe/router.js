@@ -16,7 +16,7 @@ module.exports = (app) => {
     const DEBUG = app.debug;
 
     // 遍历文件，得到所有controller
-    wakler(ROOT_PATH).forEach((route) => {
+    wakler(ROOT_PATH, (route) => {
         // 将所有controller注册路由
         router.register(route.path, route.method, route.middleware);
     });
@@ -29,9 +29,8 @@ module.exports = (app) => {
     DEBUG('ROUTERS are all registed.');
 };
 
-let wakler = (root) => {
-    let res = [],
-        files = fs.readdirSync(root);
+let wakler = (root, cb) => {
+    let files = fs.readdirSync(root);
 
     files.forEach((file) => {
         let path = root + '/' + file,
@@ -41,9 +40,7 @@ let wakler = (root) => {
             let route = require(path);
             let filePath = path.replace(ROOT_PATH, '').split('.')[0];
 
-            // 得到文件内容
-            res.push({
-                // 得到controller设置path或者路径
+            cb && cb({
                 path: route.path || filePath,
                 method: route.method || ['GET'],
                 middleware: route.middleware || function*() {}
@@ -53,8 +50,7 @@ let wakler = (root) => {
             ROUTE_MAP[route.path || filePath] = filePath;
 
         } else {
-            res = res.concat(wakler(path));
+            wakler(path, cb);
         }
     });
-    return res;
 }
