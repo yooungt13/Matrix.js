@@ -2,8 +2,25 @@
   "apps" : [{
     "name"               : "werewolf",
     "script"             : "index.js",
+
+    // logs
+    "log_date_format"    : "YYYY-MM-DD HH:mm Z",
+    "max_memory_restart" : "700M",
+    "error_file"         : "./log/error.log",
+    "out_file"           : "./log/out.log",
+    "merge_logs"         : true,
+
+    "exec_interpreter"   : "node",
+    "node_args"          : "--harmony",
+    "exec_mode"          : "cluster_mode",
+    "instances"          : 0,
+
+    // watch file changed & reload
+    "watch"              : false,
+
+    // environment variables
     "env": {
-      "NODE_ENV": "dev"
+      "NODE_ENV": "prod"
     }
   }]
 }

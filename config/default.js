@@ -27,8 +27,7 @@ module.exports = {
         extension: __dirname + '/../environment/extension',
 
         resource: __dirname + '/../resource',
-        favicon: __dirname + '/../favicon.ico',
-        hash: __dirname + '/../public/hash.json'
+        favicon: __dirname + '/../favicon.ico'
     },
     port: 3000,
     isDebug: false,
