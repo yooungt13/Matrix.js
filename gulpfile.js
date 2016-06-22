@@ -13,11 +13,10 @@ const browserify = require('gulp-browserify');
 const uglify = require('gulp-uglify');
 const minify = require('gulp-minify-css');
 
-
 let paths = {
-    sass: ['resource/src/scss/**/*.scss'],
-    entry: ['resource/src/js/page/*.js'],
-    refresh: ['resource/build/css/**/*.css', 'resource/build/js/**/*.js', 'view/**/*.html']
+    sass: ['client/resource/src/scss/**/*.scss'],
+    entry: ['client/resource/src/js/page/*.js'],
+    refresh: ['client/resource/build/css/**/*.css', 'client/resource/build/js/**/*.js', 'client/view/**/*.html']
 }
 
 gulp.task('watch', () => {
@@ -35,7 +34,7 @@ function compileCss() {
     gulp.src(paths.sass)
         .pipe(sass())
         // .pipe(minify())
-        .pipe(gulp.dest('./resource/build/css'));
+        .pipe(gulp.dest('./client/resource/build/css'));
 }
 
 // 刷新页面
@@ -48,5 +47,5 @@ function compileJs() {
     gulp.src(paths.entry)
         .pipe(browserify())
         // .pipe(uglify())
-        .pipe(gulp.dest('resource/build/js/page'));
+        .pipe(gulp.dest('client/resource/build/js/page'));
 }

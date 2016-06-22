@@ -4,7 +4,7 @@ module.exports = {
     // application name
     name: 'Werewolf',
     // application server starup file
-    app: __dirname + '/../environment/app',
+    app: __dirname + '/../server/app',
 
     host: {
         document: 'localhost:3000'
@@ -12,22 +12,19 @@ module.exports = {
     path: {
         base: __dirname + '/../',
 
-        // model config
-        datasource: __dirname + '/../model/datasource',
-        mock: __dirname + '/../model/mock',
         // view config
-        view: __dirname + '/../view',
-        // controller config
-        controller: __dirname + '/../controller',
+        view: __dirname + '/../client/view',
+        resource: __dirname + '/../client/resource',
+        favicon: __dirname + '/../client/resource/favicon.ico',
 
-        // env related
-        recipe: __dirname + '/../environment/recipe',
-        context: __dirname + '/../environment/context',
-        middleware: __dirname + '/../environment/middleware',
-        extension: __dirname + '/../environment/extension',
-
-        resource: __dirname + '/../resource',
-        favicon: __dirname + '/../favicon.ico'
+        // server files
+        recipe: __dirname + '/../server/recipe',
+        context: __dirname + '/../server/context',
+        middleware: __dirname + '/../server/middleware',
+        controller: __dirname + '/../server/controller',
+        datasource: __dirname + '/../server/model/datasource',
+        mock: __dirname + '/../server/model/mock',
+        extension: __dirname + '/../server/extension'
     },
     port: 3000,
     isDebug: false,
