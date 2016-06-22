@@ -69,7 +69,7 @@ or the directory /log.
     │   ├── out.log
     │   └── error.log
     │
-    ├── index.js          entry point
-    ├── gulpfile.js       workflow script
+    ├── index.js                entry point
+    ├── gulpfile.js             workflow script
     ├── pm2.json
     └── package.json

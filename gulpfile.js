@@ -34,7 +34,7 @@ function compileCss() {
     gulp.src(paths.sass)
         .pipe(sass())
         // .pipe(minify())
-        .pipe(gulp.dest('./client/resource/build/css'));
+        .pipe(gulp.dest('client/resource/build/css'));
 }
 
 // 刷新页面
