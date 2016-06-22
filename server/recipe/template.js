@@ -6,18 +6,19 @@
 'use strict';
 
 const render = require('koa-swig');
-const filters = require('../helper/filter');
 
 module.exports = (app) => {
 
     const VIEW_PATH = app.config.path.view;
     const DEBUG = app.debug;
 
+    const filters = require(app.config.path.extension + '/filter');
+
     // 全局参数，每次调用this.render都会返回
     const GLOBAL = {
         ENV: process.env.NODE_ENV || 'dev',
         STATIC_HOST: app.config.host.static
-    }
+    };
 
     // bs文件定位版本号
     if(app.config.path.hash) {
@@ -27,8 +28,8 @@ module.exports = (app) => {
     // 配置template engine
     app.context.render = render({
         root: VIEW_PATH,
-        filters: filters,   // 扩展filter
-        cache: false,       // 禁止模板缓存
+        filters: filters,  // 扩展filter
+        cache: false,      // 禁止模板缓存
         locals: {
             GLOBAL: GLOBAL
         }

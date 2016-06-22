@@ -11,9 +11,9 @@ const co = require('co');
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 
-const DATASOURCE_PATH = __dirname + '/model/datasource';
-const MOCK_PATH = __dirname + '/model/mock';
-const CONTROLLER_PATH = __dirname + '/controller';
+const DATASOURCE_PATH = __dirname + '/server/model/datasource';
+const MOCK_PATH = __dirname + '/server/model/mock';
+const CONTROLLER_PATH = __dirname + '/server/controller';
 
 describe('Model', () => {
     describe('#datesource', () => {

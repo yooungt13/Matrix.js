@@ -15,57 +15,61 @@ or the directory /log.
 #File Structure
 
     ├── bin
-    │   ├── build.sh      deployment: build shell
-    │   └── run.sh        deployment: run shell
+    │   ├── build.sh            deployment: build shell
+    │   └── run.sh              deployment: run shell
     │
     ├── config
-    │   ├── defalut.js    default config
-    │   ├── dev.js        NODE_ENV: dev config
-    │   └── prod.js       NODE_ENV: prod config
+    │   ├── defalut.js          default config
+    │   ├── dev.js              NODE_ENV: dev config
+    │   └── prod.js             NODE_ENV: prod config
     │
-    ├── controller
-    │   └── index.js
+    ├── client
+    │   ├── resource
+    │   │   ├── src
+    │   │   │   ├── js
+    │   │   │   └── scss
+    │   │   │       └── index.scss
+    │   │   └── build
+    │   │       ├── js
+    │   │       │   ├── page
+    │   │       │   └── lib
+    │   │       └── css
+    │   │           └── index.css
+    │   └── view
+    │       ├── cmp
+    │       │   ├── head.html
+    │       │   ├── header.html
+    │       │   └── footer.html
+    │       ├── layout
+    │       │   └── default.html
+    │       └── page
+    │           └── index.html
     │
-    ├── environment
-    │   ├── helper        extension helper
-    │   ├── middelware
-    │   ├── recipe        framework startup flow
+    ├── server
+    │   ├── controller
+    │   │   └── index.js
+    │   │
+    │   ├── middleware
+    │   │
+    │   ├── model
+    │   │   ├── datasource      NODE_ENV: st/prod datasource
+    │   │   └── mock            NODE_ENV: dev     mock datasource
+    │   │
+    │   ├── recipe              framework startup rule
     │   │   ├── template.js
     │   │   ├── resource.js
     │   │   ├── router.js
     │   │   └── middleware.js
-    │   └── app.js        application script
+    │   │
+    │   ├── helper              extension tools
+    │   │
+    │   └── app.js              application script
     │
     ├── log
     │   ├── out.log
     │   └── error.log
     │
-    ├── model
-    │   ├── datasource    NODE_ENV: st/prod datasource
-    │   └── mock          NODE_ENV: dev     mock datasource
-    │
-    ├── resource
-    │   ├── src
-    │   │   ├── js
-    │   │   └── scss
-    │   └── build
-    │       ├── js
-    │       │   ├── page
-    │       │   └── lib
-    │       └── css
-    │           └── index.css
-    │
-    ├── views
-    │   ├── cmp
-    │   │   ├── head.html
-    │   │   ├── header.html
-    │   │   └── footer.html
-    │   ├── layout
-    │   │   └── default.html
-    │   └── page
-    │       └── index.html
-    │
-    ├── index.js          entry point
-    ├── gulpfile.js       workflow script
+    ├── index.js                entry point
+    ├── gulpfile.js             workflow script
     ├── pm2.json
     └── package.json

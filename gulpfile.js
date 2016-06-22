@@ -9,24 +9,31 @@ const gulp = require('gulp');
 const path = require('path');
 const sass = require('gulp-sass');
 const livereload = require('gulp-refresh');
-const browserify = require('gulp-browserify');
+const browserify = require('gulp-watchify');
 const uglify = require('gulp-uglify');
 const minify = require('gulp-minify-css');
 
-
 let paths = {
-    sass: ['resource/src/scss/**/*.scss'],
-    entry: ['resource/src/js/page/*.js'],
-    refresh: ['resource/build/css/**/*.css', 'resource/build/js/**/*.js', 'view/**/*.html']
+    sass: ['client/resource/src/scss/**/*.scss'],
+    entry: ['client/resource/src/js/**/*.js', '!client/resource/src/js/lib/**'],
+    refresh: ['client/resource/build/css/**/*.css', 'client/resource/build/js/**/*.js', 'client/view/**/*.html']
 }
 
-gulp.task('watch', () => {
+gulp.task('watch', ['browserify'], () => {
     gulp.watch(paths.sass, compileCss);
-    gulp.watch(paths.entry, compileJs);
     gulp.watch(paths.refresh, refresh);
 
     livereload.listen();
 });
+
+// Browserify and copy js files
+gulp.task('browserify', browserify(function(watchify) {
+    gulp.src(paths.entry)
+        .pipe(watchify({
+            watch: true
+        }))
+        .pipe(gulp.dest('client/resource/build/js'))
+}));
 
 gulp.task('default', ['watch']);
 
@@ -35,7 +42,7 @@ function compileCss() {
     gulp.src(paths.sass)
         .pipe(sass())
         // .pipe(minify())
-        .pipe(gulp.dest('./resource/build/css'));
+        .pipe(gulp.dest('client/resource/build/css'));
 }
 
 // 刷新页面
@@ -43,10 +50,3 @@ function refresh(event) {
     gulp.src(event.path).pipe(livereload());
 }
 
-// 执行browserify
-function compileJs() {
-    gulp.src(paths.entry)
-        .pipe(browserify())
-        // .pipe(uglify())
-        .pipe(gulp.dest('resource/build/js/page'));
-}
