@@ -9,4 +9,4 @@ module.exports = {
     typeof: (obj) => {
         return typeof obj;
     }
-}
+};

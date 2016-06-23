@@ -4,4 +4,4 @@ module.exports = {
         static: 'http://localhost:3000/public'
     },
     mock: true
-}
+};

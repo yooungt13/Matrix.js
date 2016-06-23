@@ -7,13 +7,13 @@
 
 const fs = require('fs');
 const co = require('co');
+const path = require('path');
 
 const assert = require('chai').assert;
-const expect = require('chai').expect;
 
-const DATASOURCE_PATH = __dirname + '/server/model/datasource';
-const MOCK_PATH = __dirname + '/server/model/mock';
-const CONTROLLER_PATH = __dirname + '/server/controller';
+const DATASOURCE_PATH = path.join(__dirname, '/server/model/datasource');
+const MOCK_PATH = path.join(__dirname, '/server/model/mock');
+// const CONTROLLER_PATH = __dirname + '/server/controller';
 
 describe('Model', () => {
     describe('#datesource', () => {
@@ -57,8 +57,8 @@ let util = {
         let files = fs.readdirSync(root);
 
         files.forEach((file) => {
-            let path = root + '/' + file,
-                stat = fs.lstatSync(path);
+            let path = root + '/' + file;
+            let stat = fs.lstatSync(path);
 
             // 过滤系统文件
             if (/^\..*/.test(file)) {
@@ -73,6 +73,6 @@ let util = {
         });
     },
     isGenerator: (fn) => {
-        return 'function' === typeof fn && fn.constructor.name === 'GeneratorFunction';
+        return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
     }
-}
+};

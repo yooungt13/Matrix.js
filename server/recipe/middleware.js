@@ -26,5 +26,5 @@ module.exports = (app) => {
 };
 
 function isGen(fn) {
-    return 'function' === typeof fn && fn.constructor.name === 'GeneratorFunction';
+    return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
 }

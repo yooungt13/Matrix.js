@@ -61,7 +61,7 @@ or the directory /log.
     │   │   ├── router.js
     │   │   └── middleware.js
     │   │
-    │   ├── helper              extension tools
+    │   ├── extension           extension tools
     │   │
     │   └── app.js              application script
     │

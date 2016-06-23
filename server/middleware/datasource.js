@@ -9,12 +9,11 @@ const fs = require('fs');
 const config = require('config');
 
 module.exports = function*(next) {
-
     let useMock = config.mock;
     let pathname = this.request.url;
     let filename = this.routerMap[pathname];
 
-    const DATA_PATH = (!!useMock ? config.path.mock : config.path.datasource) + filename;
+    const DATA_PATH = (useMock ? config.path.mock : config.path.datasource) + filename;
 
     // 数据格式接受json|js
     if (fs.existsSync(DATA_PATH + '.json') || fs.existsSync(DATA_PATH + '.js')) {
@@ -33,12 +32,12 @@ module.exports = function*(next) {
     }
 
     yield next;
-}
+};
 
 function isGenerator(fn) {
-    return 'function' === typeof fn && fn.constructor.name === 'GeneratorFunction';
+    return typeof fn === 'function' && fn.constructor.name === 'GeneratorFunction';
 }
 
 function isFunction(fn) {
-    return 'function' === typeof fn;
+    return typeof fn === 'function';
 }

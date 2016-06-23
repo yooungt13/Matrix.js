@@ -8,7 +8,6 @@
 const serve = require('koa-static-server');
 
 module.exports = (app) => {
-
     const RESOURCE_PATH = app.config.path.resource + '/build';
     const DEBUG = app.debug;
 

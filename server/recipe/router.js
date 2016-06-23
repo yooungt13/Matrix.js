@@ -5,8 +5,8 @@
 
 'use strict';
 
-const router = require("koa-router")();
-const config = require("config");
+const router = require('koa-router')();
+const config = require('config');
 const fs = require('fs');
 
 const ROOT_PATH = config.get('path.controller');
@@ -33,8 +33,8 @@ let wakler = (root, cb) => {
     let files = fs.readdirSync(root);
 
     files.forEach((file) => {
-        let path = root + '/' + file,
-            stat = fs.lstatSync(path);
+        let path = root + '/' + file;
+        let stat = fs.lstatSync(path);
 
         if (!stat.isDirectory()) {
             let route = require(path);
@@ -48,9 +48,8 @@ let wakler = (root, cb) => {
 
             // 生成routermap
             ROUTE_MAP[route.path || filePath] = filePath;
-
         } else {
             wakler(path, cb);
         }
     });
-}
+};
