@@ -99,9 +99,13 @@ function Device(ua) {
         os.rimtabletos = true;
         os.version = rimtabletos[2];
     }
-    if (playbook) browser.playbook = true;
-    if (uc) os.uc = true;
-    os.ucversion = uc[1];
+    if (playbook) {
+        browser.playbook = true;
+    }
+    if (uc) {
+        os.uc = true;
+        os.ucversion = uc[1];
+    }
     if (kindle) {
         os.kindle = true;
         os.version = kindle[1];

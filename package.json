@@ -1,6 +1,6 @@
 {
   "name": "generator-werewolf",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "description": "Scaffolding based on koa",
   "files": [
     "bin",
@@ -10,7 +10,8 @@
     "index.js",
     "gulpfile.js",
     "test.js",
-    "pm2.dev.json"
+    "pm2.dev.json",
+    ".eslintrc.json"
   ],
   "main": "index.js",
   "dependencies": {
