@@ -9,4 +9,4 @@ module.exports = {
 
         this.body = data;
     }
-}
+};

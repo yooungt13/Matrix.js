@@ -9,5 +9,6 @@ function init() {
 // 或者通过 module.exports 提供整个接口
 module.exports = {
     init: init
-}
+};
+
 },{}]},{},[1]);

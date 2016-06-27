@@ -8,7 +8,6 @@
 const request = require('koa-request');
 
 module.exports = function*(params) {
-
     // TODO
     // fecth data
     var options = {
@@ -23,4 +22,4 @@ module.exports = function*(params) {
     var data = JSON.parse(response.body);
 
     return data;
-}
+};

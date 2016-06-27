@@ -8,7 +8,6 @@
 const render = require('koa-swig');
 
 module.exports = (app) => {
-
     const VIEW_PATH = app.config.path.view;
     const DEBUG = app.debug;
 
