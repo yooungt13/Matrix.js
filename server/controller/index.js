@@ -10,6 +10,7 @@ module.exports = {
     // path: '/:id',
     path: '/',
     method: ['GET'],
+    // entry: 'index',
     middleware: function*() {
         // RESTFUL 接口取参
         // console.log(this.params);

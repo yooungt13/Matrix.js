@@ -15,6 +15,7 @@ module.exports = {
         // view config
         view: path.join(__dirname, '/../client/view'),
         resource: path.join(__dirname, '/../client/resource'),
+        entry: path.join(__dirname, '/../client/resource/src/js/page'),
         favicon: path.join(__dirname, '/../client/resource/favicon.ico'),
 
         // server files

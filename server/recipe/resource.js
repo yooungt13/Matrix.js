@@ -17,5 +17,13 @@ module.exports = (app) => {
         rootPath: '/public'
     }));
 
+    // 若prod则执行deps parse, 得到map
+    // if(process.env === 'prod') {
+        const parser = require(app.config.path.extension + '/deps');
+        app.context.deps = parser();
+
+        DEBUG('DEPS Parse completely.');
+    // }
+
     DEBUG('STATIC_RESOURCE is set.');
 };
