@@ -1,6 +1,12 @@
-[![Travis](https://img.shields.io/travis/yooungt13/Matrix.js.svg?maxAge=2592000)](https://travis-ci.org/yooungt13/Matrix.js)
+#Matrix.js
 
-#Usage
+[![Travis](https://img.shields.io/travis/yooungt13/Matrix.js.svg?maxAge=2592000)](https://travis-ci.org/yooungt13/Matrix.js)
+[![npm](https://img.shields.io/npm/dt/generator-werewolf.svg?maxAge=2592000)](https://www.npmjs.com/package/generator-matrix)
+[![Version](https://img.shields.io/npm/v/generator-matrix.svg)](https://www.npmjs.com/package/generator-matrix)
+
+> Nodejs scaffold based on Koa. You can transform it to be a matrix monster.
+
+##Usage
 
 Start to code:
 
@@ -14,7 +20,7 @@ or the directory /log.
 
 
 
-#File Structure
+##File Structure
 
     ├── bin
     │   ├── build.sh            deployment: build shell
