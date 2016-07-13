@@ -1,6 +1,6 @@
 {
   "apps" : [{
-    "name"               : "werewolf",
+    "name"               : "matrixjs",
     "script"             : "index.js",
 
     // logs
@@ -16,7 +16,7 @@
     // environment variables
     "env": {
       "NODE_ENV": "dev",
-      "DEBUG"   : "Werewolf",
+      "DEBUG"   : "Matrix.js",
       "DEBUG_FD": 1
     }
   }]

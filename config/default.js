@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     // application name
-    name: 'Werewolf',
+    name: 'Matrix.js',
     // application server starup file
     app: path.join(__dirname, '/../server/app'),
 
