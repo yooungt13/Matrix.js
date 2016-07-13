@@ -17,7 +17,7 @@ const MOCK_PATH = path.join(__dirname, '/server/model/mock');
 
 describe('Model', () => {
     describe('#datesource', () => {
-        it('should return json', (done) => {
+        it('should return json', () => {
             // 遍历文件，得到所有datasource 文件
             // TODO: 接口返回超过200ms 被视为超时
             // util.wakler(DATASOURCE_PATH, (path) => {
