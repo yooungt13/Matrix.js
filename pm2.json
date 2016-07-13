@@ -1,6 +1,6 @@
 {
   "apps" : [{
-    "name"               : "werewolf",
+    "name"               : "matrixjs",
     "script"             : "index.js",
 
     // logs

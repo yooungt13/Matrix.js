@@ -1,3 +1,5 @@
+[![Travis](https://img.shields.io/travis/yooungt13/Matrix.js.svg?maxAge=2592000)](https://travis-ci.org/yooungt13/Matrix.js)
+
 #Usage
 
 Start to code:

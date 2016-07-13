@@ -1,6 +1,6 @@
 {
   "name": "generator-matrix",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Scaffolding based on koa",
   "files": [
     "bin",
