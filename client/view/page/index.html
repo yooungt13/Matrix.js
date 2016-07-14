@@ -1,11 +1,11 @@
 {% extends "../layout/default.html" %}
 
 {% block content %}
-<p>You have some roles to pick:</p>
+<p>You have some state to transform:</p>
 <ul>
-{% for role in roles %}
+{% for state in states %}
     <li{% if loop.first %} class="first"{% endif %}>
-        {{ role }}
+        {{ state }}
     </li>
 {% endfor %}
 </ul>

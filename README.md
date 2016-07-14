@@ -17,6 +17,7 @@
   * Mac OS X, Windows, or Linux
   * [Node.js](https://nodejs.org/) v4.2.1 or newer
   * `npm` v3.9.6 or newer (new to [npm](https://docs.npmjs.com/)?)
+  * [PM2](http://pm2.keymetrics.io/docs/usage/quick-start/) v1.1.3
 
 
 ### Directory Layout
@@ -77,7 +78,7 @@ Before you start, take a moment to see how the project structure looks like:
 
 #### 1. Get the latest version
 
-You can start by cloning the latest version of React Starter Kit (RSK) on your
+You can start by cloning the latest version of Matrix.js on your
 local machine by running:
 
 ```shell
@@ -95,7 +96,7 @@ in [package.json](./package.json) file.
 
 #### 3. Run `npm run dev`
 
-This command will start the Node.js server (`node index.js` with pm2) and gulp task for watching files change to reload.
+This command will start the Node.js server (`node index.js` with [pm2](http://pm2.keymetrics.io/docs/usage/quick-start/)) and gulp task for watching files change to reload.
 
 > [http://localhost:3000/](http://localhost:3000/) — Node.js server <br>
 > [http://localhost:3000/](http://localhost:3000/teapot) — Health check<br>
@@ -103,7 +104,9 @@ This command will start the Node.js server (`node index.js` with pm2) and gulp t
 
 Note that the `npm run dev` commond launches the app in `dev` mode, the compiled output files are not optimized and minimized in this case. You can use `prod` argument to launch it in release (production) mode:
 
-> npm run prod
+```shell
+$ npm run prod
+```
 
 #### 4. Run `pm2 logs`
 

@@ -28,9 +28,9 @@ module.exports = {
         // console.log(this.device);
 
         yield this.render('page/index', {
-            title: 'Hello, Werewolf.',
+            title: 'Hello, Matrix.',
             css: ['page.css'],
-            roles: ['Villager', 'Seer', 'Mason', 'Hunter', 'Troublemaker'],
+            states: ['Optimus Prime', 'Megatron', 'Starscream', 'Devastator', 'Bumblebee'],
 
             // 日期：中国时区误差8小时
             now: new Date()
