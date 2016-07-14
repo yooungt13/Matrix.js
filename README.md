@@ -7,7 +7,7 @@
 
 > Nodejs scaffold based on Koa. You can transform it to be a matrix monster.
 
-[![MMS](http://static.hello13.net/img/mms.jpg =320x)](http://weibo.com/MMS2015)
+[![MMS](http://static.hello13.net/img/mms.jpg)](http://weibo.com/MMS2015)
 
 
 ##Get Started
@@ -23,53 +23,55 @@
 
 Before you start, take a moment to see how the project structure looks like:
 
-	.
-    ├── bin
-    │   ├── build.sh            deployment: build shell
-    │   └── run.sh              deployment: run shell
-    │
-    ├── config
-    │   ├── defalut.js          default config
-    │   ├── dev.js              NODE_ENV: dev config
-    │   └── prod.js             NODE_ENV: prod config
-    │
-    ├── client
-    │   ├── resource
-    │   │   ├── src
-    │   │   │   ├── js
-    │   │   │   └── scss
-    │   │   └── build
-    │   └── view
-    │       ├── cmp
-    │       │   ├── head.html
-    │       │   ├── header.html
-    │       │   └── footer.html
-    │       ├── layout
-    │       │   └── default.html
-    │       └── page
-    │           └── index.html
-    │
-    ├── server
-    │   ├── recipe              framework startup rule
-    │   │   ├── template.js
-    │   │   ├── resource.js
-    │   │   ├── router.js
-    │   │   └── middleware.js
-    │   │
-    │   ├── model
-    │   │   ├── datasource      NODE_ENV: st/prod datasource
-    │   │   └── mock            NODE_ENV: dev     mock datasource
-    │   │
-    │   ├── controller
-    │   ├── middleware
-    │   ├── extension           extension tools
-    │   └── app.js              application script
-    │
-    ├── log                     NODE_ENV: dev     logs
-    ├── index.js                entry point
-    ├── gulpfile.js             workflow script
-    ├── pm2.json
-    └── package.json
+```
+.
+├── bin
+│   ├── build.sh            deployment: build shell
+│   └── run.sh              deployment: run shell
+│
+├── config
+│   ├── defalut.js          default config
+│   ├── dev.js              NODE_ENV: dev config
+│   └── prod.js             NODE_ENV: prod config
+│
+├── client
+│   ├── resource
+│   │   ├── src
+│   │   │   ├── js
+│   │   │   └── scss
+│   │   └── build
+│   └── view
+│       ├── cmp
+│       │   ├── head.html
+│       │   ├── header.html
+│       │   └── footer.html
+│       ├── layout
+│       │   └── default.html
+│       └── page
+│           └── index.html
+│
+├── server
+│   ├── recipe              framework startup rule
+│   │   ├── template.js
+│   │   ├── resource.js
+│   │   ├── router.js
+│   │   └── middleware.js
+│   │
+│   ├── model
+│   │   ├── datasource      NODE_ENV: st/prod datasource
+│   │   └── mock            NODE_ENV: dev     mock datasource
+│   │
+│   ├── controller
+│   ├── middleware
+│   ├── extension           extension tools
+│   └── app.js              application script
+│
+├── log                     NODE_ENV: dev     logs
+├── index.js                entry point
+├── gulpfile.js             workflow script
+├── pm2.json
+└── package.json
+```
 
 ### Quick Start
 
@@ -80,7 +82,7 @@ local machine by running:
 
 ```shell
 $ git clone -o Matrix.js -b master --single-branch \
-      https://github.com/yooungt/Matrix.js.git MyApp
+      https://github.com/yooungt13/Matrix.js.git MyApp
 $ cd MyApp
 ```
 
