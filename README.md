@@ -95,8 +95,19 @@ in [package.json](./package.json) file.
 
 #### 3. Run `npm run dev`
 
-The command launches the app in `development` mode, the compiled output files are not optimized and minimized in this case.
-You can use `npm run prod` command to launch it in release (production) mode:
+This command will start the Node.js server (`node index.js` with pm2) and gulp task for watching files change to reload.
+
+> [http://localhost:3000/](http://localhost:3000/) — Node.js server <br>
+> [http://localhost:3000/](http://localhost:3000/teapot) — Health check<br>
+> [http://localhost:3000/](http://localhost:3000/api/data) — API Datasource<br>
+
+Note that the `npm run dev` commond launches the app in `dev` mode, the compiled output files are not optimized and minimized in this case. You can use `prod` argument to launch it in release (production) mode:
+
+> npm run prod
+
+#### 4. Run `pm2 logs`
+
+This command will output the logs into terminal for checking, or you can check logs in the directory `MyApp/log`.
 
 ### How to Update
 
