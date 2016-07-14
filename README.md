@@ -7,22 +7,23 @@
 
 > Nodejs scaffold based on Koa. You can transform it to be a matrix monster.
 
-##Usage
-
-Start to code:
-
-> npm run dev
-
-If you want to check logs, then run:
-
-> pm2 logs
-
-or the directory /log.
+[![MMS](http://static.hello13.net/img/mms.jpg =320x)](http://weibo.com/MMS2015)
 
 
+##Get Started
 
-##File Structure
+### Requirements
 
+  * Mac OS X, Windows, or Linux
+  * [Node.js](https://nodejs.org/) v4.2.1 or newer
+  * `npm` v3.9.6 or newer (new to [npm](https://docs.npmjs.com/)?)
+
+
+### Directory Layout
+
+Before you start, take a moment to see how the project structure looks like:
+
+	.
     ├── bin
     │   ├── build.sh            deployment: build shell
     │   └── run.sh              deployment: run shell
@@ -74,7 +75,7 @@ or the directory /log.
     │   │
     │   └── app.js              application script
     │
-    ├── log
+    ├── log    
     │   ├── out.log
     │   └── error.log
     │
@@ -82,3 +83,43 @@ or the directory /log.
     ├── gulpfile.js             workflow script
     ├── pm2.json
     └── package.json
+    
+### Quick Start
+
+#### 1. Get the latest version
+
+You can start by cloning the latest version of React Starter Kit (RSK) on your
+local machine by running:
+
+```shell
+$ git clone -o react-starter-kit -b master --single-branch \
+      https://github.com/kriasoft/react-starter-kit.git MyApp
+$ cd MyApp
+```
+
+Alternatively, you can start a new project based on Matrix.js right from [Yeoman generator](https://www.npmjs.com/package/generator-matrix).
+
+#### 2. Run `npm install`
+
+This will install both run-time project dependencies and developer tools listed
+in [package.json](../package.json) file.
+
+#### 3. Run `npm run dev`
+
+The command launches the app in `development` mode, the compiled output files are not optimized and minimized in this case.
+You can use `npm run prod` command to launch it in release (production) mode:
+
+### How to Update
+
+If you need to keep your project up to date with the recent changes made to Matrix.js,
+you can always fetch and merge them from [this repo](https://github.com/yooungt13/Matrix.js)
+back into your own project by running:
+
+```shell
+$ git checkout master
+$ git fetch Matrix.js
+$ git merge Matrix.js/master
+$ npm install
+```
+
+
