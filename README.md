@@ -38,13 +38,7 @@ Before you start, take a moment to see how the project structure looks like:
     │   │   ├── src
     │   │   │   ├── js
     │   │   │   └── scss
-    │   │   │       └── index.scss
     │   │   └── build
-    │   │       ├── js
-    │   │       │   ├── page
-    │   │       │   └── lib
-    │   │       └── css
-    │   │           └── index.css
     │   └── view
     │       ├── cmp
     │       │   ├── head.html
@@ -56,34 +50,27 @@ Before you start, take a moment to see how the project structure looks like:
     │           └── index.html
     │
     ├── server
-    │   ├── controller
-    │   │   └── index.js
-    │   │
-    │   ├── middleware
-    │   │
-    │   ├── model
-    │   │   ├── datasource      NODE_ENV: st/prod datasource
-    │   │   └── mock            NODE_ENV: dev     mock datasource
-    │   │
     │   ├── recipe              framework startup rule
     │   │   ├── template.js
     │   │   ├── resource.js
     │   │   ├── router.js
     │   │   └── middleware.js
     │   │
-    │   ├── extension           extension tools
+    │   ├── model
+    │   │   ├── datasource      NODE_ENV: st/prod datasource
+    │   │   └── mock            NODE_ENV: dev     mock datasource
     │   │
+    │   ├── controller
+    │   ├── middleware
+    │   ├── extension           extension tools
     │   └── app.js              application script
     │
-    ├── log    
-    │   ├── out.log
-    │   └── error.log
-    │
+    ├── log                     NODE_ENV: dev     logs
     ├── index.js                entry point
     ├── gulpfile.js             workflow script
     ├── pm2.json
     └── package.json
-    
+
 ### Quick Start
 
 #### 1. Get the latest version
@@ -92,8 +79,8 @@ You can start by cloning the latest version of React Starter Kit (RSK) on your
 local machine by running:
 
 ```shell
-$ git clone -o react-starter-kit -b master --single-branch \
-      https://github.com/kriasoft/react-starter-kit.git MyApp
+$ git clone -o Matrix.js -b master --single-branch \
+      https://github.com/yooungt/Matrix.js.git MyApp
 $ cd MyApp
 ```
 
@@ -102,7 +89,7 @@ Alternatively, you can start a new project based on Matrix.js right from [Yeoman
 #### 2. Run `npm install`
 
 This will install both run-time project dependencies and developer tools listed
-in [package.json](../package.json) file.
+in [package.json](./package.json) file.
 
 #### 3. Run `npm run dev`
 
