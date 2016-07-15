@@ -16,8 +16,8 @@
 
   * Mac OS X, Windows, or Linux
   * [Node.js](https://nodejs.org/) v4.2.1 or newer
-  * `npm` v3.9.6 or newer (new to [npm](https://docs.npmjs.com/)?)
-  * [PM2](http://pm2.keymetrics.io/docs/usage/quick-start/) v1.1.3
+  * [npm](https://www.npmjs.com/) v3.9.6 or newer
+  * [PM2](http://pm2.keymetrics.io/docs/usage/quick-start/) v1.1.3 or newer
 
 
 ### Directory Layout
@@ -78,7 +78,7 @@ Before you start, take a moment to see how the project structure looks like:
 
 #### 1. Get the latest version
 
-You can start by cloning the latest version of Matrix.js on your
+You can start by cloning the latest version of [Matrix.js](https://github.com/yooungt13/Matrix.js) on your
 local machine by running:
 
 ```shell
@@ -87,7 +87,7 @@ $ git clone -o Matrix.js -b master --single-branch \
 $ cd MyApp
 ```
 
-Alternatively, you can start a new project based on Matrix.js right from [Yeoman generator](https://www.npmjs.com/package/generator-matrix).
+Alternatively, you can start a new project based on [Matrix.js](https://github.com/yooungt13/Matrix.js) right from [Yeoman generator](https://www.npmjs.com/package/generator-matrix).
 
 #### 2. Run `npm install`
 
