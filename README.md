@@ -1,7 +1,7 @@
 #Matrix.js
 
 [![Travis](https://img.shields.io/travis/yooungt13/Matrix.js.svg)](https://travis-ci.org/yooungt13/Matrix.js)
-[![npm](https://img.shields.io/npm/dt/generator-werewolf.svg)](https://www.npmjs.com/package/generator-matrix)
+[![npm](https://img.shields.io/npm/dt/generator-matrix.svg)](https://www.npmjs.com/package/generator-matrix)
 [![Version](https://img.shields.io/npm/v/generator-matrix.svg)](https://www.npmjs.com/package/generator-matrix)
 [![npm](https://img.shields.io/npm/l/generator-matrix.svg)]()
 
