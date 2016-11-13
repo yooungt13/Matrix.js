@@ -8,7 +8,7 @@
 const render = require('koa-swig');
 
 module.exports = (app) => {
-    const VIEW_PATH = app.config.path.view;
+    const PUBLIC_PATH = app.config.path.public;
     const DEBUG = app.debug;
     const ENV = process.env.NODE_ENV || 'dev';
 
@@ -23,7 +23,7 @@ module.exports = (app) => {
 
     // 配置template engine
     app.context.render = render({
-        root: VIEW_PATH,
+        root: PUBLIC_PATH,
         filters: filters, // 扩展filter
         cache: isProd, // 禁止模板缓存
         locals: {

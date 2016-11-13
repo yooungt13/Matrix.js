@@ -13,8 +13,10 @@ module.exports = {
         base: path.join(__dirname, '/../'),
 
         // view config
-        view: path.join(__dirname, '/../client/view'),
-        resource: path.join(__dirname, '/../client/resource'),
+        // view: path.join(__dirname, '/../client/view'),
+        // resource: path.join(__dirname, '/../client/resource'),
+        public: path.join(__dirname, '/../client/public'),
+        dist: path.join(__dirname, '/../client/dist'),
         favicon: path.join(__dirname, '/../client/resource/favicon.ico'),
 
         // server files

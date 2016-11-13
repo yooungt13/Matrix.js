@@ -27,13 +27,9 @@ module.exports = {
         // console.log(this.ua);
         // console.log(this.device);
 
-        yield this.render('page/index', {
-            title: 'Hello, Matrix.',
-            css: ['page.css'],
-            states: ['Optimus Prime', 'Megatron', 'Starscream', 'Devastator', 'Bumblebee'],
-
-            // 日期：中国时区误差8小时
-            now: new Date()
+        yield this.render('index', {
+            title: 'Hello, Matrix',
+            entry: 'index'
         });
     }
 };
