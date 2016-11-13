@@ -63,7 +63,7 @@
 /******/ 	}
 /******/
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dc639ba53351a76b77f6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "30226e02ef0c36f65ce8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/
@@ -594,7 +594,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _App = __webpack_require__(/*! ./App */ 172);
+	var _App = __webpack_require__(/*! ./components/App/ */ 184);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -22424,139 +22424,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 3)))
 
 /***/ },
-/* 172 */
-/*!***************************!*\
-  !*** ./client/src/App.js ***!
-  \***************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _logo = __webpack_require__(/*! ./logo.svg */ 173);
-	
-	var _logo2 = _interopRequireDefault(_logo);
-	
-	__webpack_require__(/*! ./App.css */ 174);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var App = function (_Component) {
-	  _inherits(App, _Component);
-	
-	  function App() {
-	    _classCallCheck(this, App);
-	
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	  }
-	
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'App' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'App-header' },
-	          _react2.default.createElement('img', { src: '/public/' + _logo2.default, className: 'App-logo', alt: 'logo' }),
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'Welcome to React'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'App-intro' },
-	          'To get started, edit ',
-	          _react2.default.createElement(
-	            'code',
-	            null,
-	            'src/App.js'
-	          ),
-	          ' and save to reload.'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return App;
-	}(_react.Component);
-	
-	exports.default = App;
-
-/***/ },
-/* 173 */
-/*!*****************************!*\
-  !*** ./client/src/logo.svg ***!
-  \*****************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "static/media/logo.5d5d9eef.svg";
-
-/***/ },
-/* 174 */
-/*!****************************!*\
-  !*** ./client/src/App.css ***!
-  \****************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !./../../~/css-loader!./App.css */ 175);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 177)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(true) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept(/*! !./../../~/css-loader!./App.css */ 175, function() {
-				var newContent = __webpack_require__(/*! !./../../~/css-loader!./App.css */ 175);
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 175 */
-/*!*******************************************!*\
-  !*** ./~/css-loader!./client/src/App.css ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ./../../~/css-loader/lib/css-base.js */ 176)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
-	
-	// exports
-
-
-/***/ },
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
 /* 176 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
@@ -22912,6 +22783,143 @@
 	
 	// module
 	exports.push([module.id, "body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */
+/*!********************************************!*\
+  !*** ./client/src/components/App/index.js ***!
+  \********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _logo = __webpack_require__(/*! ./logo.svg */ 185);
+	
+	var _logo2 = _interopRequireDefault(_logo);
+	
+	__webpack_require__(/*! ./App.css */ 186);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var App = function (_Component) {
+	  _inherits(App, _Component);
+	
+	  function App() {
+	    _classCallCheck(this, App);
+	
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	  }
+	
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'App' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'App-header' },
+	          _react2.default.createElement('img', { src: '/dist/' + _logo2.default, className: 'App-logo', alt: 'logo' }),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Welcome to React'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'App-intro' },
+	          'To get started, edit ',
+	          _react2.default.createElement(
+	            'code',
+	            null,
+	            'src/App.js'
+	          ),
+	          ' and save to reload.'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return App;
+	}(_react.Component);
+	
+	exports.default = App;
+
+/***/ },
+/* 185 */
+/*!********************************************!*\
+  !*** ./client/src/components/App/logo.svg ***!
+  \********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/media/logo.5d5d9eef.svg";
+
+/***/ },
+/* 186 */
+/*!*******************************************!*\
+  !*** ./client/src/components/App/App.css ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./App.css */ 187);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 177)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(/*! !./../../../../~/css-loader!./App.css */ 187, function() {
+				var newContent = __webpack_require__(/*! !./../../../../~/css-loader!./App.css */ 187);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 187 */
+/*!**********************************************************!*\
+  !*** ./~/css-loader!./client/src/components/App/App.css ***!
+  \**********************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 176)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
 	
 	// exports
 

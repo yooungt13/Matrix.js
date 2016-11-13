@@ -14,7 +14,7 @@ module.exports = (app) => {
     // 设置静态文件路径
     app.use(serve({
         rootDir: DIST_PATH,
-        rootPath: '/public'
+        rootPath: '/dist'
     }));
 
     DEBUG('STATIC_RESOURCE is set.');

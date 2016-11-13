@@ -11,13 +11,12 @@ module.exports = {
     },
     path: {
         base: path.join(__dirname, '/../'),
+        client: path.join(__dirname, '/../client'),
+        server: path.join(__dirname, '/../server'),
 
-        // view config
-        // view: path.join(__dirname, '/../client/view'),
-        // resource: path.join(__dirname, '/../client/resource'),
-        public: path.join(__dirname, '/../client/public'),
+        // client config
         dist: path.join(__dirname, '/../client/dist'),
-        favicon: path.join(__dirname, '/../client/resource/favicon.ico'),
+        favicon: path.join(__dirname, '/../client/favicon.ico'),
 
         // server files
         recipe: path.join(__dirname, '/../server/recipe'),
