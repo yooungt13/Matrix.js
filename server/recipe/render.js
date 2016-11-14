@@ -30,11 +30,11 @@ module.exports = (app) => {
     });
 
     // 配置template engine
-    // app.context.render = function*(page, data) {
-    //     yield render(page, data);
-    // };
+    app.context.render = function*(data) {
+        yield render.call(this, 'index', data);
+    };
 
-    app.context.render = render;
+    // app.context.render = render;
 
     DEBUG('TEMPLATE is set.');
 };

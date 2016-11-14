@@ -27,7 +27,7 @@ module.exports = {
         // console.log(this.ua);
         // console.log(this.device);
 
-        yield this.render('index', {
+        yield this.render({
             title: 'Hello, Matrix',
             entry: 'index'
         });

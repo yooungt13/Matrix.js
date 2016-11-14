@@ -10,6 +10,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -17,7 +18,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'client/dist'),
-        filename: '[name].bundle.js'
+        filename: 'js/[name].bundle.js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
@@ -43,7 +44,8 @@ module.exports = {
             // in development "style" loader enables hot editing of CSS.
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+
             },
             // JSON is not enabled by default in Webpack but both Node and Browserify
             // allow it implicitly so we also enable it.
@@ -64,11 +66,17 @@ module.exports = {
         ]
     },
     plugins: [
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new webpack.HotModuleReplacementPlugin(),
         // If you require a missing module and then `npm install` it, you still have
         // to restart the development server for Webpack to discover it. This plugin
         // makes the discovery automatic so you don't have to restart.
         // See https://github.com/facebookincubator/create-react-app/issues/186
-        new WatchMissingNodeModulesPlugin('node_modules')
+        new WatchMissingNodeModulesPlugin('node_modules'),
+        new ExtractTextPlugin('css/[name].css')
     ]
 }
