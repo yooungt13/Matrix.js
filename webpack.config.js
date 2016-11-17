@@ -5,12 +5,14 @@
 
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const nodeModulesPath = '.';
 
 module.exports = {
     entry: {
@@ -18,10 +20,16 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'client/dist'),
-        filename: 'js/[name].bundle.js'
+        filename: 'js/[name].bundle.js',
+        hotUpdateChunkFilename: 'hot/[id].[hash].hot-update.js',
+        hotUpdateMainFilename: 'hot/[hash].hot-update.json'
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            'react': 'react/dist/react.min',
+            'react-dom': 'react-dom/dist/react-dom.min'
+        }
     },
     module: {
         loaders: [
@@ -63,6 +71,9 @@ module.exports = {
                     name: 'static/media/[name].[hash:8].[ext]'
                 }
             }
+        ],
+        noParse: [
+            /\/react\//g
         ]
     },
     plugins: [
@@ -72,11 +83,12 @@ module.exports = {
         //     }
         // }),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
         // If you require a missing module and then `npm install` it, you still have
         // to restart the development server for Webpack to discover it. This plugin
         // makes the discovery automatic so you don't have to restart.
         // See https://github.com/facebookincubator/create-react-app/issues/186
-        new WatchMissingNodeModulesPlugin('node_modules'),
+        new WatchMissingNodeModulesPlugin('/node_modules/'),
         new ExtractTextPlugin('css/[name].css')
     ]
 }
