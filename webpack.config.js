@@ -11,13 +11,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const nodeModulesPath = '.';
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-    entry: {
-        index: './client/src/index.js'
-    },
+    entry: [
+        './client/src/index.js'
+    ],
     output: {
         path: path.join(__dirname, 'client/dist'),
         filename: 'js/[name].bundle.js',
@@ -89,6 +88,13 @@ module.exports = {
         // makes the discovery automatic so you don't have to restart.
         // See https://github.com/facebookincubator/create-react-app/issues/186
         new WatchMissingNodeModulesPlugin('/node_modules/'),
-        new ExtractTextPlugin('css/[name].css')
-    ]
+        new ExtractTextPlugin('css/[name].css'),
+        new ManifestPlugin({
+            fileName: 'manifest.json'
+        })
+    ],
+    // externals: {
+    //     'react': 'React',
+    //     'react-dom': 'ReactDOM'
+    // }
 }
